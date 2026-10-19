@@ -1,0 +1,17 @@
+{% extends "d2/layout.html" %}
+{%  block body %}
+
+<h1>
+    add person
+</h1>
+
+<form action="{% url 'd2:add' %}" method="post">
+    {% csrf_token %}
+    {{form.as_p}}
+    <input type="submit" value="submit">
+
+</form>
+
+<a href="{% url 'd2:index' %}"> view all</a>
+
+{% endblock %}
